@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
+
+  let [newTask, setNewTask] = React.useState('');
+
   return (
     <View style={styles.container}>
 
-      <Text style={styles.title}>Style Custom</Text>
+     {/*
+     <Text style={styles.title}>Style Custom</Text>
 
       <Text>Digite seu nome</Text>
       <TextInput placeholder='Nome' style={styles.textinp}/>
@@ -21,11 +26,20 @@ export default function App() {
 
       <Text>Senha</Text>
       <TextInput placeholder='Senha' style={styles.textinp}/>
+      */}
 
+      <Text>Trabalhando com Hook useState</Text>
+      <TextInput onChangeText={setNewTask} placeholder='Tarefa' style={styles.textinp}/>
+      <Text>Elemento Digitado</Text>
+      <Text>{newTask}</Text>
+
+      {/*
       <TouchableOpacity activeOpacity={0.7} style={styles.button}>
-        <Text>Enviar</Text>
+        <Text>add Tarefas</Text>
       </TouchableOpacity>
+      */}
       <StatusBar style="auto" />
+
     </View>
   );
 }
